@@ -1,5 +1,5 @@
 
-/* 1- desafio complementario: crear un algoritmo utilizando un ciclo */
+/* 1- DESAFIO COMPLEMENTARIO: CREAR UN ALGORITMO UTILIZANDO UN CICLO */
 
 /* 
 let coleccion = prompt("ya tienes una figura?")
@@ -13,9 +13,9 @@ switch(coleccion) {
     break;
 } */
 
-/* 2- desafio entregable: simulador interactivo */
+/* 2- DESAFIO ENTREGABLE: SIMULADOR INTERACTIVO */
 
-
+/* 
 const elegirProducto = () => {
     producto = prompt ("Elige tu Myth: seiya, shiryu, shun, kanon, camus, aiolos, bud, poseidon, hades");
 
@@ -67,4 +67,19 @@ calcularTotal(elegirProducto(), elegirCantidad());
 alert ("total: " + total);
 
 alert ("Continuar con el pago");
+ */
+
+
+
+/* DESAFIO COMPLEMENTARIO 3 */
+
+
+const nombres = ["seiya", "shiryu", "kanon", "camus","shun"];
+
+console.log (nombres.indexOf("kanon"))
+console.log (nombres.indexOf("camus"))
+
+const dorados = nombres.slice(2,4)
+
+console.log(dorados)
 
