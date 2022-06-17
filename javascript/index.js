@@ -15,8 +15,8 @@ switch(coleccion) {
 
 /* 2- DESAFIO ENTREGABLE: SIMULADOR INTERACTIVO */
 
-/* 
-const elegirProducto = () => {
+
+/* const elegirProducto = () => {
     producto = prompt ("Elige tu Myth: seiya, shiryu, shun, kanon, camus, aiolos, bud, poseidon, hades");
 
     let precio
@@ -66,20 +66,65 @@ calcularTotal(elegirProducto(), elegirCantidad());
 
 alert ("total: " + total);
 
-alert ("Continuar con el pago");
- */
+alert ("Continuar con el pago"); */
+
 
 
 
 /* DESAFIO COMPLEMENTARIO 3 */
 
 
-const nombres = ["seiya", "shiryu", "kanon", "camus","shun"];
+/* const nombres = ["seiya", "shiryu", "kanon", "camus","shun"];
 
 console.log (nombres.indexOf("kanon"))
 console.log (nombres.indexOf("camus"))
 
 const dorados = nombres.slice(2,4)
 
-console.log(dorados)
+console.log(dorados) */
+
+
+
+
+const elijeTuPersonaje = () => {
+   caballero = prompt ("Elige entre los siguientes personajes: Seiya, Shiryu, Shun, Kanon, Camus, Aiolos, Bud, Poseidon, Hades");
+
+   let de 
+   switch (caballero) {
+       case "seiya":
+           de = "Bronce";
+            break;
+       case "shiryu":
+           de = "Bronce";
+            break;
+       case "shun":
+           de = "Bronce";
+            break;
+        case "kanon":
+            de = "Oro";
+            break;
+        case "camus":
+            de = "Oro";
+            break;
+        case "aiolos":
+            de = "Oro";
+            break;
+        default:
+            de = "Dios Guerrero";
+            break;
+   }
+
+   return de;
+}
+
+alert("Elegiste un Caballero de " + elijeTuPersonaje());
+
+const nombres = [{range: "bronce", name: "seiya"},{range: "bronce", name:"shiryu"},{range: "oro", name: "kanon"},{range: "oro", name: "camus"}, {range: "dios", name: "poseidon"}, {range: "dios", name: "hades"}];
+
+const filterA = nombres.filter((rango) => {
+    return rango.range === "oro"
+})
+
+console.log(filterA)
+
 

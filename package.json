@@ -296,5 +296,13 @@
     "yargs": "^17.5.1",
     "yargs-parser": "^20.2.9"
   },
-  "description": "*Proyecto JS de Coderhouse*"
+  "description": "*Proyecto JS de Coderhouse*",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatiasCarballo87/SAINT-SEIYA-MYTH-CLOTH.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MatiasCarballo87/SAINT-SEIYA-MYTH-CLOTH/issues"
+  },
+  "homepage": "https://github.com/MatiasCarballo87/SAINT-SEIYA-MYTH-CLOTH#readme"
 }
