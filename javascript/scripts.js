@@ -1,3 +1,49 @@
+// Primera entrega del Proyecto Final
+
+const elijeTuPersonaje = () => {
+    caballero = prompt ("Elige entre los siguientes personajes: Seiya, Shiryu, Shun, Kanon, Camus, Aiolos, Bud, Poseidon, Hades");
+ 
+    let de 
+    switch (caballero) {
+        case "seiya":
+            de = "Bronce";
+             break;
+        case "shiryu":
+            de = "Bronce";
+             break;
+        case "shun":
+            de = "Bronce";
+             break;
+         case "kanon":
+             de = "Oro";
+             break;
+         case "camus":
+             de = "Oro";
+             break;
+         case "aiolos":
+             de = "Oro";
+             break;
+         default:
+             de = "Dios Guerrero";
+             break;
+    }
+ 
+    return de;
+ }
+ 
+ alert("Elegiste un Caballero de " + elijeTuPersonaje());
+ 
+ const nombres = [{range: "bronce", name: "seiya"},{range: "bronce", name:"shiryu"},{range: "oro", name: "kanon"},{range: "oro", name: "camus"}, {range: "dios", name: "poseidon"}, {range: "dios", name: "hades"}];
+ 
+ const filterA = nombres.filter((rango) => {
+     return rango.range === "oro"
+ })
+ 
+ console.log(filterA)
+
+
+
+ 
 let contenedorItems = document.getElementById('contenedorItems')
 
 function mostrarMythCloths() {
