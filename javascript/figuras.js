@@ -4,7 +4,7 @@ const figures =[
     img: "./images/SEIYA-V3.webp",
     cont: "description",
     name: "Myth Cloth EX Seiya V3",
-    price: "150"
+    price: 150
 },
 
 {
@@ -12,7 +12,7 @@ const figures =[
     img: "./images/SHIRYU-V3.webp",
     cont: "description",
     name: "Myth Cloth EX Shiryu V3",
-    price: "150"
+    price: 150
 },
 
 {
@@ -20,7 +20,7 @@ const figures =[
     img: "./images/SHUN.jpg",
     cont: "description",
     name: "Myth Cloth EX Shun V3",
-    price: "150"
+    price: 150
 },
 
 {
@@ -28,7 +28,7 @@ const figures =[
     img: "./images/KANON.jpg",
     cont: "description",
     name: "Myth Cloth Geminis Kanon",
-    price: "180"
+    price: 180
 },
 
 {
@@ -36,7 +36,7 @@ const figures =[
     img: "./images/CAMUS.webp",
     cont: "description",
     name: "Myth Cloth EX Acuario Camus",
-    price: "180"
+    price: 180
 },
 
 {
@@ -44,7 +44,7 @@ const figures =[
     img: "./images/AIOLOS.jpg",
     cont: "description",
     name: "Myth Cloth EX Sagitario Aiolos",
-    price: "180"
+    price: 180
 },
 
 {
@@ -52,7 +52,7 @@ const figures =[
     img: "./images/BUD.webp",
     cont: "description",
     name: "Myth Cloth EX Alcor Zeta Bud",
-    price: "190"
+    price: 190
 },
 
 {
@@ -60,7 +60,7 @@ const figures =[
     img: "./images/POSEIDON.webp",
     cont: "description",
     name: "Myth Cloth EX Poseidon",
-    price: "200"
+    price: 200
 },
 
 {
@@ -68,6 +68,6 @@ const figures =[
     img: "./images/HADES.webp",
     cont: "description",
     name: "Myth Cloth EX Hades",
-    price: "250"
+    price: 250
 }
 ]

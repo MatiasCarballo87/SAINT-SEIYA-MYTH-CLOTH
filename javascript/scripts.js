@@ -1,49 +1,8 @@
-// Primera entrega del Proyecto Final
+// Desafio Incorporar Eventos
 
-const elijeTuPersonaje = () => {
-    caballero = prompt ("Elige entre los siguientes personajes: Seiya, Shiryu, Shun, Kanon, Camus, Aiolos, Bud, Poseidon, Hades");
- 
-    let de 
-    switch (caballero) {
-        case "seiya":
-            de = "Bronce";
-             break;
-        case "shiryu":
-            de = "Bronce";
-             break;
-        case "shun":
-            de = "Bronce";
-             break;
-         case "kanon":
-             de = "Oro";
-             break;
-         case "camus":
-             de = "Oro";
-             break;
-         case "aiolos":
-             de = "Oro";
-             break;
-         default:
-             de = "Dios Guerrero";
-             break;
-    }
- 
-    return de;
- }
- 
- alert("Elegiste un Caballero de " + elijeTuPersonaje());
- 
- const nombres = [{range: "bronce", name: "seiya"},{range: "bronce", name:"shiryu"},{range: "oro", name: "kanon"},{range: "oro", name: "camus"}, {range: "dios", name: "poseidon"}, {range: "dios", name: "hades"}];
- 
- const filterA = nombres.filter((rango) => {
-     return rango.range === "oro"
- })
- 
- console.log(filterA)
+ let cart = []
 
 
-
- 
 let contenedorItems = document.getElementById('contenedorItems')
 
 function mostrarMythCloths() {
@@ -63,7 +22,31 @@ function mostrarMythCloths() {
         addButton.innerText = ("Añadir al carrito")
         cont.append(name, price, addButton)
         box.append(img, cont)
+
+        addButton.addEventListener("click", function () {
+            cart.push(figuras)
+            alert("Añadiste "+ figuras.name + " al carrito")
+            contenedorCart.innerHTML = ` `
+            mostrarCarrito()
+        })
     })
 }
 
 mostrarMythCloths()
+
+let contenedorCart = document.getElementById('contenedorCart')
+
+function mostrarCarrito() {
+    cart.map((figuras) => {
+        const infoCart = document.createElement("li")
+        infoCart.setAttribute("id","lista")
+        infoCart.innerHTML +=`
+        <img src="${figuras.img}">
+        <h3>${figuras.name}</h3>
+        <h3>$${figuras.price}</h3>
+        `
+        contenedorCart.append(infoCart)
+
+    })
+        
+}
