@@ -11,7 +11,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%; }
 
 .logo {
@@ -38,10 +38,10 @@ body {
   justify-content: center; }
   #contenedorItems .myths {
     width: 400px;
-    margin-bottom: 60px; }
+    margin-bottom: 30px; }
     #contenedorItems .myths img {
       width: 100%;
-      height: 90%; }
+      height: 80%; }
 
 .description {
   background-color: #a9adad;
@@ -62,11 +62,27 @@ h2 {
   margin-top: 2vh;
   color: white; }
 
-#lista {
-  list-style-type: none;
-  text-align: center;
-  color: white;
-  margin: 20px; }
-  #lista img {
-    height: 300px;
-    width: 250px; }
+.contFiguras {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.2rem; }
+  .contFiguras .miniFigura {
+    margin: auto; }
+    .contFiguras .miniFigura img {
+      height: 180px;
+      width: 150px; }
+  .contFiguras .miniName, .contFiguras .miniPrice, .contFiguras .cant, .contFiguras .subtotal {
+    margin: auto; }
+    .contFiguras .miniName h3, .contFiguras .miniName p, .contFiguras .miniPrice h3, .contFiguras .miniPrice p, .contFiguras .cant h3, .contFiguras .cant p, .contFiguras .subtotal h3, .contFiguras .subtotal p {
+      text-align: center;
+      color: white; }
+  .contFiguras .delete {
+    margin: auto; }
+    .contFiguras .delete .deleteButton {
+      background-color: red;
+      color: white;
+      height: 30px;
+      width: 150px;
+      border-radius: 5px;
+      cursor: pointer; }
