@@ -1,11 +1,38 @@
-let cart;
+(async () => {
+    const {value: pais} = await Swal.fire({
+        title: 'Bienvenido!',
+        text: 'Selecciona tu pais',
+        confirmButtonText: 'Seleccionar',
+        confirmButtonColor: 'green',
+        allowOutsideClick: false,
+        input: 'select',
+        inputPlaceholder: 'Pais',
+        inputOptions: {
+            Argentina: 'Argentina',
+            Brasil: 'Brasil',
+            Chile: 'Chile',
+            Uruguay: 'Uruguay',
+            Paraguay: 'Paraguay',
+            Peru: 'Peru',
+            Mexico: 'Mexico'
+        },
+        imageUrl: 'images/fondoseiya.webp',
+        imageWidth: '300px',
+        imageAlt: 'fondo caballeros de bronce',
+    });
 
-if(JSON.parse(localStorage.getItem('cart'))) {
-    cart = JSON.parse(localStorage.getItem('cart'))
-}else { 
-    localStorage.setItem('cart', JSON.stringify([]))
-    cart = JSON.parse(localStorage.getItem('cart'))
-}
+    if (pais){
+        Swal.fire({
+            title: `Seleccionaste ${pais}`,
+            confirmButtonColor: 'green'
+        });
+    }
+})()
+
+
+
+let cart = JSON.parse(localStorage.getItem('cart')) || []
+
 
 function mostrarMythCloths() {
 
@@ -41,6 +68,10 @@ for (let i = 0; i < addButton.length; i++) {
 function añadirAlCarrito(e) {
     const btn = e.target;
     const id = btn.getAttribute('id')
+    Swal.fire({
+        title: 'Añadiste a: ' + id + ' al carrito',
+        confirmButtonColor: 'green',
+    })
     const figuFinded = figures.find(figu => figu.id == id)
     const inCart = cart.find(figu => figu.id == figuFinded.id)
     console.log(inCart)
