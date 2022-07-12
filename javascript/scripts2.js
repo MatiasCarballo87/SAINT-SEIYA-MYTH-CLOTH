@@ -1,3 +1,13 @@
+fetch('./figures.json')
+    .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            mostrarMythCloths(data[0,1,2,3,4,5,6,7,8]);
+            figures = data;
+    })
+    .catch(error => console.error(error))
+
+
 (async () => {
     const {value: pais} = await Swal.fire({
         title: 'Bienvenido!',
@@ -72,7 +82,7 @@ function añadirAlCarrito(e) {
         title: 'Añadiste a: ' + id + ' al carrito',
         confirmButtonColor: 'green',
     })
-    const figuFinded = figures.find(figu => figu.id == id)
+    const figuFinded = data.find(figu => figu.id == id)
     const inCart = cart.find(figu => figu.id == figuFinded.id)
     console.log(inCart)
     if(!inCart) {
@@ -134,7 +144,7 @@ for (let i = 0; i < deleteButton.length; i++) {
 function eliminarDelCarrito (e) {
     const delbtn = e.target;
     const id = delbtn.getAttribute('id')
-    const figuFinded = figures.find(figu => figu.id == id)
+    const figuFinded = data.find(figu => figu.id == id)
     const inCart = cart.find(figu => figu.id == figuFinded.id)
     console.log(inCart)
     if(!inCart) {
