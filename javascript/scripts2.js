@@ -1,13 +1,3 @@
-fetch('./figures.json')
-    .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            mostrarMythCloths(data[0,1,2,3,4,5,6,7,8]);
-            figures = data;
-    })
-    .catch(error => console.error(error))
-
-
 (async () => {
     const {value: pais} = await Swal.fire({
         title: 'Bienvenido!',
@@ -39,6 +29,15 @@ fetch('./figures.json')
     }
 })()
 
+fetch('./figures.json')
+    .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            figures = data;
+            mostrarMythCloths();
+    })
+.catch(error => console.error(error))
+
 
 
 let cart = JSON.parse(localStorage.getItem('cart')) || []
@@ -62,16 +61,14 @@ function mostrarMythCloths() {
         const container = document.getElementById('contenedorItems')
         container.innerHTML += box
     }
+
+    const addButton = document.getElementsByClassName('addButton')
+
+    for (let i = 0; i < addButton.length; i++) {
+        const element = addButton[i];
+        element.addEventListener('click', añadirAlCarrito)
+    }
     
-}
-
-mostrarMythCloths()
-
-const addButton = document.getElementsByClassName('addButton')
-
-for (let i = 0; i < addButton.length; i++) {
-    const element = addButton[i];
-    element.addEventListener('click', añadirAlCarrito)
 }
 
 
@@ -82,7 +79,7 @@ function añadirAlCarrito(e) {
         title: 'Añadiste a: ' + id + ' al carrito',
         confirmButtonColor: 'green',
     })
-    const figuFinded = data.find(figu => figu.id == id)
+    const figuFinded = figures.find(figu => figu.id == id)
     const inCart = cart.find(figu => figu.id == figuFinded.id)
     console.log(inCart)
     if(!inCart) {
@@ -106,31 +103,31 @@ const totalCart = () => {
 const showCart = document.getElementById('contenedorCart')
 
 for (let i = 0; i < cart.length; i++) {
-const element = cart[i];
-const { id, img, name, price, cantidad} = element
-const selectFig = `
-<div class="contFiguras">
-    <div class="miniFigura">
-        <img src="${img}">
-    </div>
-    <div class="miniName">    
-        <h3>${name}</h3>
-    </div>
-    <div class="miniPrice">    
-        <h3>u$d ${price}</h3>
-    </div>
-    <div class="cant">
-        <p>${cantidad}</p>
-    </div>
-    <div class="subtotal">
-        <p>$${(cantidad * price)}</p>
-    </div>
-        <div class="delete">
-        <button id=${id} class="deleteButton">Eliminar del carrito</button>
-    </div>  
-</div>        
-`
-showCart.innerHTML += selectFig;
+    const element = cart[i];
+    const { id, img, name, price, cantidad} = element
+    const selectFig = `
+    <div class="contFiguras">
+        <div class="miniFigura">
+            <img src="${img}">
+        </div>
+        <div class="miniName">    
+            <h3>${name}</h3>
+        </div>
+        <div class="miniPrice">    
+            <h3>u$d ${price}</h3>
+        </div>
+        <div class="cant">
+            <p>${cantidad}</p>
+        </div>
+        <div class="subtotal">
+            <p>$${(cantidad * price)}</p>
+        </div>
+            <div class="delete">
+            <button id=${id} class="deleteButton">Eliminar del carrito</button>
+        </div>  
+    </div>        
+    `
+    showCart.innerHTML += selectFig;
 
 }
 
@@ -144,7 +141,7 @@ for (let i = 0; i < deleteButton.length; i++) {
 function eliminarDelCarrito (e) {
     const delbtn = e.target;
     const id = delbtn.getAttribute('id')
-    const figuFinded = data.find(figu => figu.id == id)
+    const figuFinded = figures.find(figu => figu.id == id)
     const inCart = cart.find(figu => figu.id == figuFinded.id)
     console.log(inCart)
     if(!inCart) {
