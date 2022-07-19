@@ -1,3 +1,5 @@
+// SWEET ALERT
+
 (async () => {
     const {value: pais} = await Swal.fire({
         title: 'Bienvenido!',
@@ -29,6 +31,8 @@
     }
 })()
 
+//FETCH
+
 fetch('./figures.json')
     .then(response => response.json())
         .then(data => {
@@ -39,9 +43,9 @@ fetch('./figures.json')
 .catch(error => console.error(error))
 
 
+//MOSTRAR PRODUCTOS
 
 let cart = JSON.parse(localStorage.getItem('cart')) || []
-
 
 function mostrarMythCloths() {
 
@@ -71,6 +75,7 @@ function mostrarMythCloths() {
     
 }
 
+//AÑADIR AL CARRITO
 
 function añadirAlCarrito(e) {
     const btn = e.target;
@@ -88,55 +93,65 @@ function añadirAlCarrito(e) {
         let cartFilted = cart.filter(figu => figu.id != inCart.id)
         cart = [...cartFilted, {...inCart, cantidad: inCart.cantidad + 1}]
     }
-
     console.log(cart)
     localStorage.setItem('cart', JSON.stringify(cart))   
-    
 }
 
+
+//TOTAL CARRITO
 
 const totalCart = () => {
     return cart.reduce((acc, figu) => acc + figu.price * figu.cantidad, 0)
 }
 
 
+//MOSTRAR CARRITO
+
 const showCart = document.getElementById('contenedorCart')
 
-for (let i = 0; i < cart.length; i++) {
-    const element = cart[i];
-    const { id, img, name, price, cantidad} = element
-    const selectFig = `
-    <div class="contFiguras">
-        <div class="miniFigura">
-            <img src="${img}">
-        </div>
-        <div class="miniName">    
-            <h3>${name}</h3>
-        </div>
-        <div class="miniPrice">    
-            <h3>u$d ${price}</h3>
-        </div>
-        <div class="cant">
-            <p>${cantidad}</p>
-        </div>
-        <div class="subtotal">
-            <p>$${(cantidad * price)}</p>
-        </div>
+
+function viewCart() {
+    for (let i = 0; i < cart.length; i++) {
+        const element = cart[i];
+        const { id, img, name, price, cantidad} = element
+        const selectFig = `
+        <div class="contFiguras">
+            <div class="miniFigura">
+                <img src="${img}">
+            </div>
+            <div class="miniName">    
+                <h3>${name}</h3>
+            </div>
+            <div class="miniPrice">    
+                <h3>u$d ${price}</h3>
+            </div>
+            <div class="cant">
+                <p>${cantidad}</p>
+            </div>
+            <div class="subtotal">
+                <p>$${(cantidad * price)}</p>
+            </div>
             <div class="delete">
-            <button id=${id} class="deleteButton">Eliminar del carrito</button>
-        </div>  
-    </div>        
-    `
-    showCart.innerHTML += selectFig;
-
+                <button id=${id} class="deleteButton">Eliminar del carrito</button>
+            </div>  
+        </div>        
+        `
+        showCart.innerHTML += selectFig;
+        
+    }
 }
+    
+    
+//BOTON ELIMINAR DEL CARRITO 
+    
+document.addEventListener("click", (e) => {
+    if(e.target && e.target.matches("button.deleteButton")){
+        eliminarDelCarrito(e);
+    }
+})
 
-const deleteButton = document.getElementsByClassName('deleteButton')
 
-for (let i = 0; i < deleteButton.length; i++) {
-    const element = deleteButton[i];
-    element.addEventListener('click', eliminarDelCarrito)
-}
+// FUNCION ELIMINAR DEL CARRITO
 
 function eliminarDelCarrito (e) {
     const delbtn = e.target;
@@ -150,4 +165,5 @@ function eliminarDelCarrito (e) {
     }
 
     showCart.innerHTML = ``
+    localStorage.setItem('cart', JSON.stringify(cart))
 }
