@@ -17,6 +17,8 @@ body {
 .logo {
   background-color: black;
   text-align: center; }
+  .logo img {
+    width: 60%; }
 
 .titular h1 {
   text-align: center;
@@ -33,24 +35,29 @@ body {
 #contenedorItems {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   padding: 1rem;
   justify-content: center; }
   #contenedorItems .myths {
-    width: 400px;
-    margin-bottom: 30px; }
+    width: 250px;
+    height: 400px; }
     #contenedorItems .myths img {
       width: 100%;
-      height: 80%; }
+      height: 70%; }
 
 .description {
   background-color: #a9adad;
   text-align: center;
-  height: 100px;
+  height: 30%;
+  width: 250px;
   padding: 1rem; }
+  .description h3 {
+    font-size: medium; }
+  .description p {
+    margin: 5px 0; }
   .description button {
     height: 30px;
-    width: 250px;
+    width: 200px;
     border-radius: 5px;
     cursor: pointer;
     background-color: green;
@@ -60,29 +67,74 @@ h2 {
   text-align: center;
   font-size: 4rem;
   margin-top: 2vh;
+  margin-bottom: 3vh;
   color: white; }
 
-.contFiguras {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1.2rem; }
-  .contFiguras .miniFigura {
-    margin: auto; }
-    .contFiguras .miniFigura img {
-      height: 180px;
-      width: 150px; }
-  .contFiguras .miniName, .contFiguras .miniPrice, .contFiguras .cant, .contFiguras .subtotal {
-    margin: auto; }
-    .contFiguras .miniName h3, .contFiguras .miniName p, .contFiguras .miniPrice h3, .contFiguras .miniPrice p, .contFiguras .cant h3, .contFiguras .cant p, .contFiguras .subtotal h3, .contFiguras .subtotal p {
-      text-align: center;
-      color: white; }
-  .contFiguras .delete {
-    margin: auto; }
-    .contFiguras .delete .deleteButton {
-      background-color: red;
-      color: white;
-      height: 30px;
-      width: 150px;
-      border-radius: 5px;
-      cursor: pointer; }
+.deleteButton {
+  background-color: red;
+  color: white;
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer; }
+
+.buyCart {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: green;
+  color: white; }
+
+.table {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 4vh;
+  overflow-x: auto; }
+  .table table {
+    width: 100%;
+    background-color: #a9adad;
+    border-collapse: collapse; }
+  .table td, .table th {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center; }
+  .table th {
+    width: 150px; }
+
+#tbody td {
+  width: 150px;
+  height: 130px; }
+
+#tbody img {
+  width: 150px;
+  height: 140px; }
+
+#form {
+  text-align: center;
+  font-size: x-large;
+  width: 500px;
+  background-color: #a9adad;
+  padding: 5vh;
+  margin: auto;
+  max-width: 90%;
+  border-radius: 4px;
+  color: black;
+  margin-bottom: 3vh; }
+  #form .nombre input, #form .direccion input, #form .numero input, #form .email input {
+    width: 90%;
+    padding: 2vh;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1.5px solid black;
+    font-size: 1rem; }
+  #form .input {
+    width: 20px;
+    height: 20px; }
+  #form .boton-enviar {
+    background-color: green;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    padding: 1vh 1vw;
+    margin: 1rem 0;
+    color: white; }

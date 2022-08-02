@@ -53,14 +53,9 @@
         "img": "./images/POSEIDON.webp",
         "name": "Myth Cloth EX Poseidon",
         "price": 200
-    },
-    
-    {
-        "id": "Hades",
-        "img": "./images/HADES.webp",
-        "name": "Myth Cloth EX Hades",
-        "price": 250
     }
+    
+    
 ]
     
     
